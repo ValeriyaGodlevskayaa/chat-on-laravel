@@ -1,0 +1,76 @@
+version: '3.9'
+
+services:
+#    nginx:
+#        image: nginx:latest
+#        volumes:
+#            - ./app:/var/www
+#            - ./docker/nginx/conf.d:/etc/nginx/conf.d
+#        ports:
+#            - "8876:80"
+#        depends_on:
+#            - app
+#        container_name: chat_nginx
+
+#    app:
+#        build:
+#            context: .
+#            dockerfile: docker/app/Dockerfile
+#        volumes:
+#            - ./app:/var/www/html
+#        expose:
+#            - "9000"
+#        depends_on:
+#            - db
+#        container_name: chat_app
+    main:
+        build:
+            context: .
+            dockerfile: docker/app/Dockerfile
+        command: 'php artisan serve --host=0.0.0.0'
+        volumes:
+            - .:/var/www/
+        ports:
+            - "8080:8000"
+        user: "501:20"
+        container_name: chat_serve
+        networks:
+            - chat-test
+
+    db:
+        image: mysql:8.0
+        restart: always
+        volumes:
+            - db-data:/var/lib/mysql
+        environment:
+            MYSQL_DATABASE: chat-lv
+            MYSQL_ROOT_PASSWORD: admin
+            MYSQL_PASSWORD: admin
+            MYSQL_USER: user
+            MYSQL_ROOT_HOST: '%'
+        ports:
+            - "3310:3306"
+        command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+        user: "501:20"
+        container_name: chat_db
+        networks:
+            - chat-test
+
+    vite:
+        image: node:18
+        working_dir: /var/www
+        volumes:
+            - .:/var/www
+        ports:
+            - "5173:5173"
+        command: npm run dev
+        container_name: chat_vite
+        networks:
+            - chat-test
+
+volumes:
+    db-data:
+        driver: local
+networks:
+    chat-test:
+        driver: bridge

@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Worker" type="PhpLocalRunConfigurationType" factoryName="PHP Console" folderName="Demon" path="$PROJECT_DIR$/artisan" scriptParameters="queue:work --memory=1024 --queue=default,send,export,speed,background,linker,suggestions">
+    <method v="2" />
+  </configuration>
+</component>

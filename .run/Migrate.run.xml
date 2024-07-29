@@ -1,0 +1,30 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="Migrate" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="/usr/local/bin/docker" scriptParameters="exec chat_app php artisan migrate">
+        <method v="2" />
+    </configuration>
+</component>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

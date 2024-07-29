@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ide:generate" type="PhpLocalRunConfigurationType" factoryName="PHP Console" folderName="IDE" path="$PROJECT_DIR$/artisan" scriptParameters="ide-helper:generate">
+    <method v="2" />
+  </configuration>
+</component>
