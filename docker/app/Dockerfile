@@ -27,7 +27,7 @@ WORKDIR /var/www
 # Install Laravel dependencies
 RUN composer install
 
-RUN chown -R www-data:www-data /var/www && chmod -R 755 /var/www/storage
+RUN chown -R www-data:www-data /var/www && chmod -R 775 /var/www/storage
 
 # Expose port for Laravel application (adjust if needed)
 EXPOSE 9000

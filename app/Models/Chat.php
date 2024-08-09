@@ -13,4 +13,19 @@ class Chat extends Model
         'name',
         'is_group'
     ];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
+    public function chatMessages()
+    {
+        return $this->hasMany(ChatMessage::class);
+    }
+
+    public function chatMembers()
+    {
+        return $this->belongsToMany(User::class, 'chat_members', 'chat_id', 'user_id');
+    }
 }

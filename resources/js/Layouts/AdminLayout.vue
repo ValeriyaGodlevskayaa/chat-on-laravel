@@ -42,6 +42,7 @@
             </template>
         </Dropdown>
     </div>
+    <SectionBorder />
 
 </template>
 
@@ -49,10 +50,12 @@
 import {Link} from "@inertiajs/vue3";
 import DropdownLink from "@/Components/DropdownLink.vue";
 import Dropdown from "@/Components/Dropdown.vue";
+import SectionBorder from "@/Components/SectionBorder.vue";
 
 export default {
     name: "AdminLayout",
     components: {
+        SectionBorder,
         Dropdown,
         DropdownLink,
         Link

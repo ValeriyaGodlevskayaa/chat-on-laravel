@@ -86,7 +86,7 @@ const isUrl = (str) => {
                             <slot name="deleteAction">
                                 <DeleteIcon @click="handleDelete(item.id)"/>
                             </slot>
-                            <slot name="add-action"></slot>
+                            <slot name="add-action" :item="item"></slot>
                         </slot>
 
                     </div>

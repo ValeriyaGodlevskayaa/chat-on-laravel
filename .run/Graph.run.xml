@@ -1,5 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Graph" type="PhpLocalRunConfigurationType" factoryName="PHP Console" folderName="Graph" path="$PROJECT_DIR$/artisan" scriptParameters="generate:erd">
-    <method v="2" />
-  </configuration>
-</component>

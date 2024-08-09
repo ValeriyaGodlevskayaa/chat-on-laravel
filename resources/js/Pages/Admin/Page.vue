@@ -15,7 +15,7 @@ defineProps({
     <Head :title="pageTitle"/>
     <div class="flex">
         <Sidebar/>
-        <div class="flex-1 p-6">
+        <div class="flex-1 p-6 max-w-[calc(100%-16em)] ml-64">
             <AdminLayout/>
             <slot/>
         </div>

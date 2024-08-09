@@ -46,7 +46,11 @@ Route::middleware([
 
         Route::resource('/users', UserController::class);
 
-        Route::resource('/chat', ChatController::class)->names('chat');
+        Route::prefix('chat')->group(function () {
+            Route::resource('/', ChatController::class)->names('chat');
+            Route::post('/send-message', [ChatController::class, 'sendMessage'])->name('chat.sendMessage');
+            Route::get('/clear/{chat}', [ChatController::class, 'clearChat'])->name('chat.clearChat');
+        });
     });
 
 

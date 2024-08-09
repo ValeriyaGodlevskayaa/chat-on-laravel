@@ -1,6 +1,6 @@
 <script setup>
 import Table from "@/Components/Table/Table.vue";
-import {reactive, ref} from "vue";
+import {ref} from "vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import DialogUser from "@/Pages/Admin/Users/DialogUser.vue";
 import EditIcon from "@/Components/EditIcon.vue";
@@ -37,8 +37,12 @@ const handleCreate = () => {
             <template #editAction="{item}">
                 <EditIcon @click="handleEdit(item)"/>
             </template>
-            <template #add-action>
-                <MessageIcon :href="route('chat.index')"></MessageIcon>
+            <template #add-action="{item}">
+                <MessageIcon :href="route('chat.create', {
+                    _query: {
+                        user_id: item.id
+                    }
+                })"></MessageIcon>
             </template>
         </Table>
     </Page>

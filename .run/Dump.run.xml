@@ -1,5 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Dump" type="PhpLocalRunConfigurationType" factoryName="PHP Console" folderName="DB" path="$PROJECT_DIR$/artisan" scriptParameters="backup:run --only-db">
-    <method v="2" />
-  </configuration>
-</component>

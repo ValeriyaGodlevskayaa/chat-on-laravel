@@ -1,5 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Rollback" type="PhpLocalRunConfigurationType" factoryName="PHP Console" folderName="DB" path="$PROJECT_DIR$/artisan" scriptParameters="migrate:rollback">
-    <method v="2" />
-  </configuration>
-</component>
